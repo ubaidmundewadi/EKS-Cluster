@@ -31,7 +31,7 @@ eksctl create iamserviceaccount \
   --name alb-ingress-controller \
   --namespace kube-system \
   --cluster MERN \
-  --attach-policy-arn arn:aws:iam::<account_id>:policy/ALBIngressControllerIAMPolicy \
+  --attach-policy-arn arn:aws:iam::211125570623:policy/ALBIngressControllerIAMPolicy \
   --approve
 
 ## Install ALB Ingress Controller
