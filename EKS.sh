@@ -1,4 +1,3 @@
-#!/bin/bash
 ## Create EKS cluster
 
 eksctl create cluster \
