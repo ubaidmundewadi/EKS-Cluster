@@ -42,7 +42,7 @@ helm repo update
 
 helm upgrade --install aws-load-balancer-controller eks/aws-load-balancer-controller \
   -n kube-system \
-  --set clusterName=<cluster_name> \
+  --set clusterName=MERN \
   --set serviceAccount.create=false \
   --set serviceAccount.name=alb-ingress-controller
 
