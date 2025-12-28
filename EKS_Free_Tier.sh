@@ -26,3 +26,17 @@ eksctl create cluster \
   --nodes-min 1 \
   --nodes-max 3
 
+# To install psql
+choco install postgresql -y
+
+# for eks dynatrace integration
+mongo:4.2.24 is compatible with mongosh
+
+# To increase the nodes in the nodegroup 
+eksctl scale nodegroup \
+  --cluster <cluster-name> \
+  --name <nodegroup-name> \
+  --nodes 2 \
+  --nodes-min 1 \
+  --nodes-max 3
+
