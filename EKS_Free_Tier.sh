@@ -53,6 +53,18 @@ A Trust Policy is an IAM role policy that defines who is allowed to assume the r
 In EKS, it allows a specific Kubernetes service account (via OIDC) to assume the IAM role. 🚀
 Trust policy is applied to an IAM role to allow a specific Kubernetes service account to assume that role using OIDC.
 
+🔎 So Flow Becomes:
+
+IAM Role
+⬇
+Trust Policy
+⬇
+ServiceAccount (annotated with role ARN)
+⬇
+Deployment uses that ServiceAccount
+⬇
+Pods assume the role
+
 # To increase the nodes in the nodegroup 
 eksctl scale nodegroup \
   --cluster <cluster-name> \
