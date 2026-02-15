@@ -41,6 +41,8 @@ Your StorageClass looks like this:
 
 `provisioner: ebs.csi.aws.com`
 
+The EBS CSI driver is used by activategate component deployed by the operator as it is deployed as stateful set
+
 ✅ EBS CSI Driver
 
 The EBS CSI driver in Amazon EKS allows Kubernetes to dynamically create and attach EBS volumes to pods using PersistentVolumeClaims.
