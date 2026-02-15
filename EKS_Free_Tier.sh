@@ -1,8 +1,6 @@
 Command to create EKS cluster on AWS free tier account
 
 
-
-
 eksctl create cluster \
   --name intent-prediction \
   --region us-east-1 \
@@ -36,6 +34,12 @@ mongo:4.2.24 is compatible with mongosh
 eksctl create addon \
   --name aws-ebs-csi-driver \
   --cluster converter-application
+
+You need the EBS CSI driver when your StorageClass uses EBS volumes for dynamic provisioning in Amazon EKS.
+
+Your StorageClass looks like this:
+
+`provisioner: ebs.csi.aws.com`
 
 ✅ EBS CSI Driver
 
