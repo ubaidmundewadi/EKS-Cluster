@@ -32,6 +32,12 @@ choco install postgresql -y
 # for eks dynatrace integration
 mongo:4.2.24 is compatible with mongosh
 
+## To install EBS-CSI driver add-on
+eksctl create addon \
+  --name aws-ebs-csi-driver \
+  --cluster converter-application
+
+
 # To increase the nodes in the nodegroup 
 eksctl scale nodegroup \
   --cluster <cluster-name> \
