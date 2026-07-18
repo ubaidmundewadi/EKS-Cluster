@@ -79,3 +79,21 @@ eksctl scale nodegroup \
   --nodes-min 1 \
   --nodes-max 3
 
+
+
+eksctl create iamserviceaccount \
+  --name ebs-csi-controller-sa \
+  --namespace kube-system \
+  --cluster kagent-cluster \
+  --role-name AmazonEKS_EBS_CSI_DriverRole \
+  --role-only \
+  --attach-policy-arn arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy \
+  --approve
+  
+eksctl create addon \
+  --name aws-ebs-csi-driver \
+  --cluster kagent-cluster \
+  --service-account-role-arn arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/AmazonEKS_EBS_CSI_DriverRole \
+  --force
+  
+
