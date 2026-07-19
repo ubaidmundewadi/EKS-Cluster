@@ -4,7 +4,7 @@ Command to create EKS cluster on AWS free tier account
 eksctl create cluster \
   --name intent-prediction \
   --region us-east-1 \
-  --version 1.29 \
+  --version 1.30 \
   --managed \
   --nodegroup-name intent-workers \
   --node-type c7i-flex.large \
@@ -80,6 +80,7 @@ eksctl scale nodegroup \
   --nodes-max 3
 
 
+## Commands to run after cluster creation
 
 eksctl create iamserviceaccount \
   --name ebs-csi-controller-sa \
@@ -95,5 +96,17 @@ eksctl create addon \
   --cluster kagent-cluster \
   --service-account-role-arn arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/AmazonEKS_EBS_CSI_DriverRole \
   --force
+
+
+## Kagent Installation
+
+
+helm install kagent-crds oci://ghcr.io/kagent-dev/kagent/helm/kagent-crds \
+  --namespace kagent-system \
+  --create-namespace
+
+helm install kagent oci://ghcr.io/kagent-dev/kagent/helm/kagent \
+  --namespace kagent-system \
+  --create-namespace
   
 
