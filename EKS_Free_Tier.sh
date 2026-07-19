@@ -94,7 +94,7 @@ eksctl create iamserviceaccount \
 eksctl create addon \
   --name aws-ebs-csi-driver \
   --cluster kagent-cluster \
-  --service-account-role-arn arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/AmazonEKS_EBS_CSI_DriverRole \
+  --service-account-role-arn arn:aws:iam::520622116374:role/AmazonEKS_EBS_CSI_DriverRole \
   --force
 
 ## Command to pass the Gemini API key
