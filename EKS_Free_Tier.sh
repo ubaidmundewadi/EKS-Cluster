@@ -80,6 +80,19 @@ eksctl scale nodegroup \
   --nodes-max 3
 
 
+## Cluster creation for kagent
+eksctl create cluster \
+  --name kagent-cluster \
+  --region us-east-1 \
+  --version 1.30 \
+  --managed \
+  --nodegroup-name kagent-workers \
+  --node-type c7i-flex.large \
+  --nodes 2 \
+  --nodes-min 1 \
+  --nodes-max 3 \
+  --with-oidc
+
 ## Commands to run after cluster creation
 
 eksctl create iamserviceaccount \
