@@ -97,9 +97,12 @@ eksctl create addon \
   --service-account-role-arn arn:aws:iam::<YOUR_AWS_ACCOUNT_ID>:role/AmazonEKS_EBS_CSI_DriverRole \
   --force
 
+## Command to pass the Gemini API key
+kubectl create secret generic infra-agent-secrets \
+  --from-literal=gemini-api-key="YOUR_GEMINI_API_KEY"
+
 
 ## Kagent Installation
-
 
 helm install kagent-crds oci://ghcr.io/kagent-dev/kagent/helm/kagent-crds \
   --namespace kagent-system \
